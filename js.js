@@ -8,17 +8,33 @@ function hello(name) {
 
 hello('Mustache'); //must have quotes because variables get defined and instantiated
 
-
 //Hello, you! Part 2
 
+console.log('script loaded');
+
+function hello(name) {
+    if (name == '') {
+        console.log('Hello, world!');
+    } else {
+        console.log('Hello, ' + name + '!"');
+    }
+}
+
+hello();
 
 //Madlib
+console.log('script loaded');
 
+function madlib(nameMad, subject) {
+    console.log(nameMad + "'s favorite subject in school is " + subject);
+}
+
+madlib('carly', 'math');
 
 //Tip Calculator
 console.log('script loaded');
 
-function tipAmount(tipAmount, serviceType) {
+function tipAmount(billAmount, serviceType) {
     //tip amount is an integer/float value for a bill
     //serviceType is a string, either "bad", "fair", "good"
     
@@ -28,11 +44,11 @@ function tipAmount(tipAmount, serviceType) {
     //if serviceType is good, return 20% of tipAmount
 
     if (serviceType == 'bad') {
-        return tipAmount * 0.1;     //could have console.log instead of return, but its not the same as return, its just writing pixels to a screen. return applies an output to the function
+        return billAmount * 0.1;     //could have console.log instead of return, but its not the same as return, its just writing pixels to a screen. return applies an output to the function
     } else if (serviceType == 'fair') {
-        return tipAmount * 0.15;
+        return billAmount * 0.15;
     } else if (serviceType == 'good') {
-        return tipAmount * 0.2;
+        return billAmount * 0.2;
     }
 
     //Must return the tip amount based off of tipAmount and serviceType
@@ -44,18 +60,80 @@ var tip = tipAmount(100, 'good');
 console.log(tip);
 
 //Tip Calculator 2
+console.log('script loaded');
 
+function totalAmount(billAmount, serviceType) {
+//totalAmount = cost of bill + tip
+    
+    if (serviceType == 'bad') {
+        return billAmount * 0.1 + billAmount;    
+    } else if (serviceType == 'fair') {
+        return billAmount * 0.15 + billAmount;
+    } else if (serviceType == 'good') {
+        return billAmount * 0.2 + billAmount;
+    }
+    
+}
+
+var total = totalAmount(100, 'fair');
+
+console.log(total);
 
 //Tip Calculator 3
+console.log('script loaded');
 
+function splitAmount(billAmount, serviceType, noPeople) {
+
+    if (serviceType == 'bad') {
+        return (billAmount * 0.1 + billAmount) / noPeople;    
+    } else if (serviceType == 'fair') {
+        return (billAmount * 0.15 + billAmount) / noPeople;
+    } else if (serviceType == 'good') {
+        return (billAmount * 0.2 + billAmount) / noPeople;
+    }
+
+}
+
+var newTotal = splitAmount(100,'fair', 5);
+
+console.log(newTotal);
 
 //Print Numbers
+console.log('script loaded');
 
+function printNumbers(start, end) {
+
+    for (var i = start; i < end+1; i++) {
+        console.log(i);
+    }
+}
+printNumbers(1,10);
+
+function printNumbers2(start, end) {
+    var i = start-1;
+    while (i < end) {
+        i++;
+        console.log(i);
+    }
+}
+printNumbers2(1,10);
 
 //Print a Square
+console.log('script loaded');
 
+function printSquare(numb) {  //HELP
+    var i=1;
+    var char = '*';
+    while (i <= numb) {
+        i++;
+        console.log(char.repeat(numb));
+        
+    }
+}
+ console.log(printSquare(5));
 
 //Print a box
+
 
 
 //Print a Banner
