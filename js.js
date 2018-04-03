@@ -121,23 +121,47 @@ printNumbers2(1,10);
 //Print a Square
 console.log('script loaded');
 
-function printSquare(numb) {  //HELP
-    var i=1;
-    var char = '*';
+function printSquare(numb) { 
+    var i = 1;
     while (i <= numb) {
         i++;
-        console.log(char.repeat(numb));
+        console.log('*'.repeat(numb));
         
     }
 }
- console.log(printSquare(5));
+printSquare(5);
 
 //Print a box
 
+console.log('script loaded');
 
+function printBox(width, height) {
+    var space = width-2;
+    for (var i = 1; i <= height; i++) {
+        if (i === 1 || i === height) {
+            console.log('*'.repeat(width));
+        } else {
+            console.log('*'+ ' '.repeat(space) + '*');
+        }
+    }
+}
+printBox(3,6);
 
 //Print a Banner
+console.log('script loaded');
 
+function printBanner(statement) {
+    var border = statement.length;
+    var char = '*';
+    for (var i = 1; i <= border; i++) {
+        if (i == 1 || i == border) {
+            console.log(char.repeat(border));
+        } else {
+            console.log(statement);
+        }
+    }
+}
+printBanner('it is monday night');
 
 //Factor a Number
 
@@ -170,12 +194,47 @@ console.log(factors(24));
 
 
 //Sum the numbers
+console.log('script loaded'); 
+
+function sumNumbers(array) {
+    var total = 0;
+    var i = 0;
+    while (i < array.length) {
+        total += array[i];
+        i++;
+    }
+    console.log(total);
+    //for (var i = 0; i < array.length; i++) {
+       // total += array[i];
+}
+sumNumbers([1, 3, 5, 9]);
 
 
 //Just the positives
+console.log('script loaded');
 
+function positiveNumbers(numbers3) {
+    var newArray = [];
+
+    for (var i = 0; i < numbers3.length; i++) {
+        if (numbers3[i] > 0) {
+            newArray.push(numbers3[i]);
+        } 
+    }
+    console.log(newArray);
+}
+positiveNumbers([-4, 6, 9, -8, 5, -3])
 
 //Matrix Addition
+console.log('script loaded');
+
+([[2, 4], [3, 4]], [[5, 2], [3, 1]])
+
+function matrixAdd(first, second) {
+    var result = [];
+
+    
+}
 
 
 //Matrix Multiplication
